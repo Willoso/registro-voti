@@ -30,7 +30,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Esecuzione test con copertura
-        run: pytest --cov=registro --cov-fail-under=80 --cov-report=html
+        run: python -m pytest --cov=registro --cov-fail-under=80 --cov-report=html
 
       - name: Salva report copertura HTML (solo Ubuntu + Python 3.12)
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
